@@ -1,0 +1,41 @@
+<div>
+	<table class="top_table">
+		<tr>
+			<td>
+				Search: <br>	
+				<input type="text" class="searchFiled" ng-model="searchKey">
+			</td>
+			<td>
+				Order by：<br>
+				<select name="" id="order_select" ng-model="orderKey"><!-- 此处绑定数据后，参数的值等于当前选中选项的value值 -->
+					<option value="0">票数</option>
+					<option value="1">姓名</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	<a href="#!addPlayer" class="addNew">新增候选球员</a>
+	<table class="listTable">
+		<tr>
+			<th></th>
+			<th>姓名</th>
+			<th>位置</th>
+			<th>号码</th>
+			<th>球队</th>
+			<th>票数</th>
+			<th>操作</th>
+		</tr>
+		<tr ng-repeat="player in playerList | filter:searchKey | orderBy:(orderKey | orderFilter)">
+			<td><img src="images/{{player.thumb}}" alt=""></td>
+			<td><a href="#!detail/{{$index}}">{{player.name}}</a></td>
+			<td>{{player.position | positionFilter}}</td>
+			<td>{{player.num}}</td>
+			<td>{{player.team}}</td>
+			<td>{{player.votes}}</td>
+			<td>
+				<a href="#!edit/{{$index}}">编辑</a>
+				<a href="#">删除</a>
+			</td>
+		</tr>
+	</table>
+</div>

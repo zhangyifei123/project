@@ -1,0 +1,43 @@
+<h5 class="add">新增球员信息</h5>
+<div class="addInfo">
+	<div class="addControl">
+		姓名 <input type="text" ng-model="name" ng-blur="checkName()"><span ng-show="showName">请填写球员名字</span>
+	</div>
+	<div class="addControl">
+		号码 <input type="text" ng-model="num" ng-blur="checkNum()"><span ng-show="showNum">请填写号码</span>
+	</div>
+	<div class="addControl">
+		位置
+		<select name="" id="" ng-model="position" ng-blur="checkP()">
+			<option value="0">得分后卫</option>
+			<option value="1">控球后卫</option>
+			<option value="2">小前锋</option>
+			<option value="3">大前锋</option>
+			<option value="4">中锋</option>
+		</select>
+		<span ng-show="showP">请选择位置</span>
+	</div>
+	<div class="addControl">
+		球队
+		<select name="" id="" ng-model="team" ng-blur="checkTeam()">
+			<option value="0">黄蜂</option>
+			<option value="1">步行者</option>
+			<option value="2">爵士</option>
+			<option value="3">公牛</option>
+			<option value="4">马刺</option>
+			<option value="5">火箭</option>
+			<option value="6">快船</option>
+			<option value="7">湖人</option>
+			<option value="8">骑士</option>
+			<option value="9">勇士</option>
+		</select>
+		<span ng-show="showTeam">请选择球队</span>
+	</div>
+	<div class="addControl">
+		头像 <input type="file" class="file">
+	</div>
+	<div class="addControl">
+		<input type="button" value="保存" ng-click="saveInfo(this)"> <input type="button" value="取消" ng-click="cancel()">
+	</div>
+	
+</div>

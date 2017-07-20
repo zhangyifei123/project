@@ -1,0 +1,9 @@
+<div class="detail">
+	<img src="images/{{player.thumb}}" alt="">
+	<div id="det_1">姓名：{{player.name}}</div>
+	<div>位置：{{player.position | positionFilter}}</div>
+	<div>号码：{{player.num}}</div>
+	<div>球队：{{player.team}}</div>
+	<div>票数：{{player.votes}}</div>
+	<div ><vote-btn id="det_2"></vote-btn> <input type="button" value="返回" ng-click="back()"  id="det_3"></div>
+</div>
